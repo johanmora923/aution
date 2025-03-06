@@ -10,7 +10,7 @@ export const EmailVerification = () => {
         const query = new URLSearchParams(location.search);
         const token = query.get('token');
 
-        axios.get(`http://localhost:3000/verify-email?token=${token}`)
+        axios.get(`https://backend-auction-sigma.vercel.app/verify-email?token=${token}`)
             .then(response => {
                 response
                 setMessage('¡Tu correo electrónico ha sido verificado con éxito!');

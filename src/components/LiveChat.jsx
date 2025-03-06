@@ -8,7 +8,7 @@ import { AiOutlineRollback } from "react-icons/ai";
 import { FaMicrophone } from "react-icons/fa6";
 import CryptoJS from 'crypto-js';
 
-const socket = io('https://backend-auction-app-web.vercel.app'); 
+const socket = io('https://backend-auction-sigma.vercel.app'); 
 
 const LiveChat = ({ sender_id }) => {
     const [contacts, setContacts] = useState([]);
@@ -30,7 +30,7 @@ const LiveChat = ({ sender_id }) => {
     }, [secretKey]);
 
     const fetchContacts = useCallback(() => {
-        axios.get(`https://backend-auction-app-web.vercel.app/contacts?userId=${sender_id}`)
+        axios.get(`https://backend-auction-sigma.vercel.app/contacts?userId=${sender_id}`)
             .then(response => {
                 setContacts(response.data);
             });

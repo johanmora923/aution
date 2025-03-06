@@ -28,7 +28,7 @@ export const Inicio = () =>{
     
     useEffect(() => {
         try{
-            axios.get('https://backend-auction-app-web.vercel.app/posts')
+            axios.get('https://backend-auction-sigma.vercel.app/posts')
         .then(Response => {
             setPosts(Response.data)
         })
@@ -41,7 +41,7 @@ export const Inicio = () =>{
     useEffect(() => { 
         const id = window.localStorage.getItem('id')
         try{
-            axios.get(`https://backend-auction-app-web.vercel.app/myPosts?id=${id}`)
+            axios.get(`https://backend-auction-sigma.vercel.app/myPosts?id=${id}`)
         .then(Response => {
             setMyAuctions(Response.data)
         })
