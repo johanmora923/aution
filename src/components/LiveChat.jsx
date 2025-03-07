@@ -8,7 +8,7 @@ import { AiOutlineRollback } from "react-icons/ai";
 import { FaMicrophone } from "react-icons/fa6";
 import CryptoJS from 'crypto-js';
 
-const socket = io('https://backend-auction-sigma.vercel.app', {
+const socket = io('http://localhost:3000', {
     transports: ['websocket', 'polling'], 
     withCredentials: true 
 });
