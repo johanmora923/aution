@@ -8,7 +8,7 @@ import { AiOutlineRollback } from "react-icons/ai";
 import { FaMicrophone } from "react-icons/fa6";
 import CryptoJS from 'crypto-js';
 
-const socket = io('http://localhost:3000', {
+const socket = io('https://backend-auction.onrender.com', {
     transports: ['websocket', 'polling'], 
     withCredentials: true 
 });
@@ -33,7 +33,7 @@ const LiveChat = ({ sender_id }) => {
     }, [secretKey]);
 
     const fetchContacts = useCallback(() => {
-        axios.get(`http://localhost:3000/contacts?userId=${sender_id}`)
+        axios.get(`https://backend-auction.onrender.com/contacts?userId=${sender_id}`)
             .then(response => {
                 setContacts(response.data);
             });
@@ -145,7 +145,7 @@ const LiveChat = ({ sender_id }) => {
                 </div>
                 <div className='flex w-full md:w-3/4 items-center'>
                     <div className='flex items-center ml-10 md:ml-0'>
-                        <img src={selectedUser ? `http://localhost:3000${selectedUser.profile_photo.replace(/ /g, '%20')}` : '/default-profile.png'}
+                        <img src={selectedUser ? `https://backend-auction.onrender.com${selectedUser.profile_photo.replace(/ /g, '%20')}` : '/default-profile.png'}
                             alt="profile photo"
                             className='w-[34px] h-[34px]  rounded-full mr-2'
                             onError={(e) => { e.target.onerror = null; e.target.src = "/default-profile.png"; }}
@@ -169,7 +169,7 @@ const LiveChat = ({ sender_id }) => {
                             <li key={contact.id} className='mb-2'>
                                 <div className='flex p-2 rounded-lg hover:bg-gray-300 text-black' onClick={() => setSelectedUser(contact)}>
                                     <div>
-                                        <img src={`http://localhost:3000${contact.profile_photo.replace(/ /g, '%20')}`}
+                                        <img src={`https://backend-auction.onrender.com${contact.profile_photo.replace(/ /g, '%20')}`}
                                             className='w-[34px] min-w-[34px] h-[34px] mt-1.5 rounded-full mr-2'
                                             onError={(e) => { e.target.onerror = null; e.target.src = "/default-profile.png"; }}
                                         />
@@ -198,7 +198,7 @@ const LiveChat = ({ sender_id }) => {
                             <div className='overflow-y-auto mb-50  mt-10 ' key={selectedUser.id}>
                                 {messages.map((msg) => (
                                     <div key={msg.id_message} className='flex items-center'>
-                                        <img src={msg.sender_profile_photo ? `http://localhost:3000${msg.sender_profile_photo.replace(/ /g, '%20')}` : '/default-profile.png'} alt="" className={`w-[30px] h-[30px]  rounded-full mr-2 mt-5 ${msg.sender_id === sender_id ? '' : 'order-last ml-2'
+                                        <img src={msg.sender_profile_photo ? `https://backend-auction.onrender.com${msg.sender_profile_photo.replace(/ /g, '%20')}` : '/default-profile.png'} alt="" className={`w-[30px] h-[30px]  rounded-full mr-2 mt-5 ${msg.sender_id === sender_id ? '' : 'order-last ml-2'
                                             }`} />
                                         <div
                                             className={`p-2 my-2 w-80 rounded-lg ${msg.sender_id === sender_id ? 'bg-[#dadef4] text-black' : 'bg-[#c9f0f8] text-black ml-[40%]'}`}
