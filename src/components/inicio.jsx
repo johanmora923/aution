@@ -57,7 +57,7 @@ export const Inicio = () =>{
     return(
         <div className="bg-[#fcfcfc] ">
             <NavBarInicio onChatClick={handleChatClick} onAuctionClick={handleAuctionClick} onProfilClick={handleProfilClick} onPostClick={handlePostClick}/>
-            <div className="md:ml-65 h-full bg-[#fcfcfc]">
+            <div className={`md:ml-65 h-full bg-[#fcfcfc]`}>
                 {activeComponent === 'chat' && <LiveChat sender_id={senderID}/>}
                 {activeComponent === 'profile' && <Profile />}
                 {activeComponent === 'home'   && <MarketplaceFeed home={posts}/>}

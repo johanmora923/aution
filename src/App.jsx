@@ -15,7 +15,7 @@ function App() {
   }
 
   return (
-    <div className='bg-[#fcfcfc]'>
+    <div className={`${location.pathname === '/inicio' ? 'bg-[#fcfcfc] ' : ' bg-[#ededed] '}`} >
         {location.pathname !== '/inicio' && (
         <Navbar>
           <Button 

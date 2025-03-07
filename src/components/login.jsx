@@ -44,7 +44,8 @@ export const Login = () => {
 
 
     return (
-        <div className='bg-[#fdfdfd] w-110 h-auto m-auto  rounded-[10px] '>
+        <div className='bg-[#ededed] w-full h-screen flex flex-col items-center justify-center min-w-[375px]'>
+            <div className='bg-[#fdfdfd] w-full md:w-110 h-auto m-auto  rounded-[10px]'>
             <div className='flex flex-col m-auto mt-10  text-[#110f0f] w-90 h-250] mb-10'>
                 <img className='w-[150px] [h-100px] m-auto mt-10' src="/icono.png" alt="logo" />
                 <h2 className='m-auto mt-2 text-xl'>sign into your account</h2>
@@ -103,8 +104,8 @@ export const Login = () => {
                             forgot password?
                         </a>
                     </div>
-                    <button 
-                    className='bg-[#110f0f] text-[#fdfdfd] w-[100%] h-8 rounded-[10px] mt-7' 
+                    <button  
+                    className='bg-[#110f0f] text-[#fdfdfd] w-[100%] h-8 rounded-[10px] mt-7 hover:bg-[#000] ' 
                     type="submit">
                         sign in
                     </button>
@@ -114,6 +115,8 @@ export const Login = () => {
                 </p>
             </div>
         </div>
+    </div>
+        
     )
 };
 
