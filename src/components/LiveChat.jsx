@@ -33,7 +33,7 @@ const LiveChat = ({ sender_id }) => {
     }, [secretKey]);
 
     const fetchContacts = useCallback(() => {
-        axios.get(`https://backend-auction-sigma.vercel.app/contacts?userId=${sender_id}`)
+        axios.get(`http://localhost:3000/contacts?userId=${sender_id}`)
             .then(response => {
                 setContacts(response.data);
             });
