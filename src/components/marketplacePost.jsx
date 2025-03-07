@@ -24,7 +24,7 @@ export const MarketplacePost = ({ id, image, title, description, price, last_pri
             setLastBidder(highestBid);
             setHighestBid(parseFloat(newBid));
             setNewBid('');
-            axios.post(`https://backend-auction-sigma.vercel.app//changeBid`, {
+            axios.post(`https://backend-auction-sigma.vercel.app/changeBid`, {
                 postId: id,
                 lastPrice: parseFloat(highestBid),
                 actualPrice: parseFloat(newBid),

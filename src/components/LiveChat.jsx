@@ -8,7 +8,7 @@ import { AiOutlineRollback } from "react-icons/ai";
 import { FaMicrophone } from "react-icons/fa6";
 import CryptoJS from 'crypto-js';
 
-const socket = io('https://backend-auction-sigma.vercel.app'); 
+const socket = io('https://backend-auction-sigma.vercel.app/connection'); 
 
 const LiveChat = ({ sender_id }) => {
     const [contacts, setContacts] = useState([]);
