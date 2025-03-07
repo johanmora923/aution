@@ -40,7 +40,7 @@ export const ModalPostForm = ({ isOpen, onClose }) => {
         }
         data.append('seller_id', seller_Id); // Añadir seller_id a la solicitud
 
-        axios.post('http://localhost:3000/newPost', data)
+        axios.post('https://backend-auction.onrender.com/newPost', data)
             .then((response) => {
                 console.log('Post guardado:', response.data);
                 onClose();

@@ -28,7 +28,7 @@ export const Inicio = () =>{
     
     useEffect(() => {
         try{
-            axios.get('http://localhost:3000/posts')
+            axios.get('https://backend-auction.onrender.com/posts')
         .then(Response => {
             setPosts(Response.data)
         })
@@ -41,7 +41,7 @@ export const Inicio = () =>{
     useEffect(() => { 
         const id = window.localStorage.getItem('id')
         try{
-            axios.get(`http://localhost:3000/myPosts?id=${id}`)
+            axios.get(`https://backend-auction.onrender.com/myPosts?id=${id}`)
         .then(Response => {
             setMyAuctions(Response.data)
         })

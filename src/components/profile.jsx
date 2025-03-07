@@ -30,7 +30,7 @@ export const Profile = () => {
         const userId = window.localStorage.getItem('id');
         const email = window.localStorage.getItem('email'); // O como obtengas el email del usuario
 
-        axios.post('http://localhost:3000/request-email-verification', { userId, email })
+        axios.post('https://backend-auction.onrender.com/request-email-verification', { userId, email })
             .then(response => {
                 (response.ok)
                 setVerificationMessage('Se ha enviado un correo de verificación a tu dirección de email.');
@@ -43,7 +43,7 @@ export const Profile = () => {
 
     useEffect(() => {
         // Fetch user data from the server
-        axios.get('http://localhost:3000/user/profile', {
+        axios.get('https://backend-auction.onrender.com/user/profile', {
             params: { userId: window.localStorage.getItem('id') }
         })
             .then(response => {
@@ -60,7 +60,7 @@ export const Profile = () => {
     }, []);
 
     const handleUpdateProfile = () => {
-        axios.post('http://localhost:3000/user/update', {
+        axios.post('https://backend-auction.onrender.com/user/update', {
             userId: window.localStorage.getItem('id'),
             email,
             residence,
@@ -91,7 +91,7 @@ export const Profile = () => {
         formData.append('profile_photo', profilePhoto);
         formData.append('userId', window.localStorage.getItem('id'));
 
-        axios.post('http://localhost:3000/user/upload-profile-photo', formData, {
+        axios.post('https://backend-auction.onrender.com/upload-profile-photo', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }
@@ -101,7 +101,7 @@ export const Profile = () => {
                 alert('Profile photo updated successfully');
                 setUpdateModal('hidden');
                 // Fetch updated user data
-                axios.get('http://localhost:3000/user/profile', {
+                axios.get('https://backend-auction.onrender.com/user/profile', {
                     params: { userId: window.localStorage.getItem('id') }
                 })
                     .then(response => {

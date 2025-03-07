@@ -24,7 +24,7 @@ export const MarketplacePost = ({ id, image, title, description, price, last_pri
             setLastBidder(highestBid);
             setHighestBid(parseFloat(newBid));
             setNewBid('');
-            axios.post(`https://backend-auction-sigma.vercel.app/changeBid`, {
+            axios.post(`https://backend-auction.onrender.com/changeBid`, {
                 postId: id,
                 lastPrice: parseFloat(highestBid),
                 actualPrice: parseFloat(newBid),
@@ -54,10 +54,10 @@ export const MarketplacePost = ({ id, image, title, description, price, last_pri
     return (
         <div className="bg-white w-full text-[#292929] shadow-md md:w-[45%] rounded-lg p-4 mb-4">
             <div className='flex items-center mb-4'>
-                <img src={`http://localhost:3000${seller_photo}`} alt={seller_name} className="w-13 h-13 rounded-full object-cover"/>
+                <img src={`https://backend-auction.onrender.com${seller_photo}`} alt={seller_name} className="w-13 h-13 rounded-full object-cover"/>
                 <span className="ml-5 text-[1.2em]">{seller_name}</span>
             </div>
-            <img src={`http://localhost:3000${image}`} alt={title} className="w-full h-48 object-cover rounded-md mb-4"/>
+            <img src={`https://backend-auction.onrender.com${image}`} alt={title} className="w-full h-48 object-cover rounded-md mb-4"/>
             <h3 className="text-xl font-bold mb-2">{title}</h3>
             <ExpandableText text={description} maxLength={100} />
             <div className="flex flex-col justify-between mb-4 mt-5">
