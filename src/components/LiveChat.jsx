@@ -50,6 +50,7 @@ const LiveChat = ({ sender_id }) => {
         fetchContacts();
 
         socket.on('last message', (data) => {
+            console.log('connected 1')
             if (data && data.receiver) {
                 const decryptedMessage = {
                     ...data,
@@ -80,6 +81,7 @@ const LiveChat = ({ sender_id }) => {
             socket.emit('get messages', { sender: sender_id, receiver: selectedUser.id });
 
             socket.on('load messages', (data) => {
+                console.log('connected 2')
                 const decryptedMessages = data.map(msg => ({
                     ...msg,
                     content: decrypt(msg.content)
