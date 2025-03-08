@@ -37,7 +37,7 @@ export const Register = () => {
 
     return(
         <div className='bg-[#ededed] w-full h-screen flex flex-col items-center justify-center min-w-[375px]'>
-            <div className='bg-[#fdfdfd] w-full md:w-110 h-auto m-auto  rounded-[10px] '>
+            <div className='bg-[#fdfdfd] w-full md:w-110 h-auto m-auto  rounded-[10px] min-w-[375px] '>
                 <div className='flex flex-col m-auto mt-10  text-[#110f0f] w-90 h-250] mb-10'>
                     <img className='w-[150px] h-[100px] m-auto mt-10' src="/icono.png" alt="logo" />
                     <h2 className='m-auto mt-2 text-xl'>create an account</h2>
