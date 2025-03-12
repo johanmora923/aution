@@ -44,30 +44,32 @@ export const Login = () => {
 
 
     return (
-        <div className='bg-[#ededed] w-full h-screen flex flex-col items-center justify-center min-w-[375px]'>
-            <div className='bg-[#fdfdfd] w-full md:w-110 h-auto m-auto  rounded-[10px]'>
-            <div className='flex flex-col m-auto mt-10  text-[#110f0f] w-90 h-250] mb-10'>
-                <img className='w-[150px] [h-100px] m-auto mt-10' src="/icono.png" alt="logo" />
-                <h2 className='m-auto mt-2 text-xl'>sign into your account</h2>
-                <div className='m-auto flex flex-row  '>
+        <div className='bg-transparent w-full  flex flex-col items-center justify-center min-w-[375px]'>
+            <div className='bg-transparent w-90 md:w-110 h-auto m-auto  '>
+            <div className='flex flex-col bg-[#fdfdfd] m-auto mt-10 rounded-[20px] text-[#110f0f] w-90 md:w-110 h-250] mb-10'>
+                <img className='w-[100px] md:w-[150px]  mt-2 h-
+                [80px] md:h-100px m-auto ' src="/icono.png" alt="logo" />
+                <h2 className='m-auto  text-xl'>sign into your account</h2>
+                <div className='m-auto flex flex-row justify-around '>
                     <button
                         onClick={handleGoogleLogin}
-                        className="flex items-center justify-center bg-[#dddd] text-[#110f0f] p-2 rounded mt-4 mr-2 text-[15px]">
-                        <FaGoogle className="mr-2 justify-between" color='#4285f4' /> Sign in with Google
+                        className="flex items-center
+                        justify-center bg-[#dddd] text-[#110f0f] p-2 rounded mt-4 mr-2 text-[14px] w-[50%]">
+                        <FaGoogle className="mr-2 justify-between" color='#4285f4' />Sign in with Gmail
                     </button>
                     <button
                         onClick={handleAppleLogin}
-                        className="flex items-center justify-center bg-[#dddd] text-[#110f0f] p-2 rounded mt-4 text-[15px]">
-                        <FaApple className="mr-2" /> Sign in with Apple
+                        className="flex items-center  justify-center bg-[#dddd] text-[#110f0f] p-2 rounded w-[50%] mt-4 text-[14px] ">
+                        <FaApple className="mr-2" />Sign in with Apple
                     </button>
                 </div>
-                <div className='flex flex-row items-center  mt-3 '>
+                <div className='flex flex-row items-center  mt-3 w-[95%] m-auto justify-between'>
                     <div className='bg-[#1111] w-35 h-0.5 rounded-[50px]'></div>
-                    <span className='text-xs ml-1 mr-1 text-gray-600' >Or use Email</span>
+                    <span className='text-xs ml-1 mr-1 text-gray-600 w-30 text-center' >Or use Email</span>
                     <div  className='bg-[#1111] w-35 h-0.5 rounded-[50px]'></div>
                 </div>
-                <form onSubmit={handleSubmit}  >
-                    <div className=' border border-gray-300  mt-8 rounded-[10px]'>
+                <form onSubmit={handleSubmit} className='flex flex-col'  >
+                    <div className='w-[90%] m-auto mt-8 '>
                         <input
                             type="text"
                             id="email"
@@ -87,8 +89,9 @@ export const Login = () => {
                             className='h-12 outline-none w-[100%]   '
                         />
                     </div>
-                    <div className='mt-3'>
-                        <input 
+                    <div className='mt-3 m-auto flex w-full justify-around'>
+                        <div>
+                            <input 
                         type="checkbox" 
                         name="remenberDevice" id="remenberDevise" 
                         className=''
@@ -96,16 +99,15 @@ export const Login = () => {
                         <label 
                         htmlFor="remenberDevice"
                         className='text-sm text-gray-500'
-                        >
-                            Remenber me on this device
-                        </label>
-                        <a className='ml-[12%] text-gray-500 text-sm' href=""
+                        >Remenber me on this device</label> 
+                        </div>
+                        <a className=' text-gray-500 text-sm' href=""
                         >
                             forgot password?
                         </a>
                     </div>
                     <button  
-                    className='bg-[#110f0f] text-[#fdfdfd] w-[100%] h-8 rounded-[10px] mt-7 hover:bg-[#000] ' 
+                    className='bg-[#292929] text-[#fdfdfd] w-[50%] h-10  m-auto  rounded-[15px] mt-7 hover:bg-[#000]  ' 
                     type="submit">
                         sign in
                     </button>
