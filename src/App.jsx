@@ -17,7 +17,7 @@ function App() {
 
   return (
     <ErrorBoundary>
-      <div className={`${location.pathname === '/inicio' ? 'bg-[#fcfcfc] ' : ' bg-[#ededed] '}`} >
+      <div className={`${location.pathname === '/inicio' ? 'bg-[#fcfcfc] ' : ' bg-[#ededed] '} `} >
           {location.pathname !== '/inicio' && (
           <Navbar>
             <Button 

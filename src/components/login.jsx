@@ -44,81 +44,75 @@ export const Login = () => {
 
 
     return (
-        <div className='bg-transparent w-full  flex flex-col items-center justify-center min-w-[375px]'>
-            <div className='bg-transparent w-90 md:w-110 h-auto m-auto  '>
-            <div className='flex flex-col bg-[#fdfdfd] m-auto mt-10 rounded-[20px] text-[#110f0f] w-90 md:w-110 h-250] mb-10'>
-                <img className='w-[100px] md:w-[150px]  mt-2 h-
-                [80px] md:h-100px m-auto ' src="/icono.png" alt="logo" />
-                <h2 className='m-auto  text-xl'>sign into your account</h2>
-                <div className='m-auto flex flex-row justify-around '>
-                    <button
-                        onClick={handleGoogleLogin}
-                        className="flex items-center
-                        justify-center bg-[#dddd] text-[#110f0f] p-2 rounded mt-4 mr-2 text-[14px] w-[50%]">
-                        <FaGoogle className="mr-2 justify-between" color='#4285f4' />Sign in with Gmail
-                    </button>
-                    <button
-                        onClick={handleAppleLogin}
-                        className="flex items-center  justify-center bg-[#dddd] text-[#110f0f] p-2 rounded w-[50%] mt-4 text-[14px] ">
-                        <FaApple className="mr-2" />Sign in with Apple
-                    </button>
-                </div>
-                <div className='flex flex-row items-center  mt-3 w-[95%] m-auto justify-between'>
-                    <div className='bg-[#1111] w-35 h-0.5 rounded-[50px]'></div>
-                    <span className='text-xs ml-1 mr-1 text-gray-600 w-30 text-center' >Or use Email</span>
-                    <div  className='bg-[#1111] w-35 h-0.5 rounded-[50px]'></div>
-                </div>
-                <form onSubmit={handleSubmit} className='flex flex-col'  >
-                    <div className='w-[90%] m-auto mt-8 '>
-                        <input
-                            type="text"
-                            id="email"
-                            value={user}
-                            onChange={(e) => setUser(e.target.value)}
-                            required
-                            placeholder='user'
-                            className='h-12 w-[100%] outline-none border-b border-b-gray-300  '
-                        />
-                        <input
-                            type="password"
-                            id="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            required
-                            placeholder='password'
-                            className='h-12 outline-none w-[100%]   '
-                        />
+        <div className="w-full flex flex-col items-center justify-center px-4 md:px-8 lg:px-16 h-screen">
+            <div className="w-full max-w-md md:max-w-lg lg:max-w-xl bg-transparent">
+                <div className="flex flex-col bg-[#fdfdfd] rounded-[20px] text-[#110f0f] shadow-lg p-6 sm:p-8">
+                    <img
+                    className="w-[80px] md:w-[120px] lg:w-[150px] mx-auto mb-4"                        
+                    src="/icono.png"
+                    alt="logo"
+                    />
+                    <h2 className="text-center text-xl font-medium mb-4">Sign into your account</h2>            
+                    <div className="flex justify-between gap-3">
+                        <button
+                            onClick={handleGoogleLogin}
+                            className="flex items-center justify-center bg-gray-200 text-black p-2 rounded w-full text-sm md:text-base">
+                            <FaGoogle className="mr-2" color="#4285f4" />
+                                Sign in with Gmail
+                        </button>
+                        <button
+                            onClick={handleAppleLogin}
+                            className="flex items-center justify-center bg-gray-200 text-black p-2 rounded w-full text-sm md:text-base">
+                            <FaApple className="mr-2" />
+                                Sign in with Apple
+                        </button>
                     </div>
-                    <div className='mt-3 m-auto flex w-full justify-around'>
-                        <div>
-                            <input 
-                        type="checkbox" 
-                        name="remenberDevice" id="remenberDevise" 
-                        className=''
+                    <div className="flex items-center my-4">
+                        <div className="flex-grow h-[1px] bg-gray-300"></div>
+                        <span className="mx-4 text-gray-600 text-xs">Or use Email</span>
+                        <div className="flex-grow h-[1px] bg-gray-300"></div>
+                    </div>
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                        <input
+                        type="text"
+                        value={user}
+                        onChange={(e) => setUser(e.target.value)}
+                        required
+                        placeholder="Username"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-gray-400"
                         />
-                        <label 
-                        htmlFor="remenberDevice"
-                        className='text-sm text-gray-500'
-                        >Remenber me on this device</label> 
+                        <input
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                        placeholder="Password"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-gray-400"
+                        />
+                        <div className="flex justify-between text-sm">
+                            <label className="flex items-center">
+                                <input type="checkbox" className="mr-1" />
+                                Remember me
+                            </label>
+                            <a href="/" className="text-gray-500">
+                                Forgot password?
+                            </a>
+                            </div>
+                            <button
+                                type="submit"
+                                className="w-full py-2 bg-black text-white rounded-md hover:bg-gray-800 transition">
+                                Sign in
+                            </button>
+                            </form>
+                            <p className="text-center text-sm text-gray-600 mt-4">
+                                Not a member?{' '}
+                                <Link to="/register" className="text-black font-medium">
+                                    Register here
+                                </Link>
+                            </p>
                         </div>
-                        <a className=' text-gray-500 text-sm' href=""
-                        >
-                            forgot password?
-                        </a>
                     </div>
-                    <button  
-                    className='bg-[#292929] text-[#fdfdfd] w-[50%] h-10  m-auto  rounded-[15px] mt-7 hover:bg-[#000]  ' 
-                    type="submit">
-                        sign in
-                    </button>
-                </form>
-                <p className='m-auto mt-5 mb-5 text-gray-600'>
-                    Not a member? <Link className='text-[#110f0f]' to="/register">Registrate aqui</Link>
-                </p>
-            </div>
-        </div>
-    </div>
-        
+                </div>
     )
 };
 
