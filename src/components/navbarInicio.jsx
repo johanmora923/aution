@@ -5,10 +5,10 @@ import { BiBell } from "react-icons/bi";
 import PropTypes from 'prop-types';
 import { SiHomeassistantcommunitystore } from "react-icons/si";
 
-
 export const NavBarInicio = ({ onChatClick, onAuctionClick, onProfilClick, onPostClick }) => {
     const profilePhoto = window.localStorage.getItem('photo');
     const userLocalStorage = window.localStorage.getItem('userLocalStorage');
+    
 
     return (
         <nav className="flex fixed bottom-0 left-0 right-0  bg-[#f5f5f6] border border-solid border-[#1111] z-50   md:left-auto md:right-auto md:w-65 md:h-[100%] md:flex md:flex-col  md:fixed  md:bottom-0 md:z-50 ">

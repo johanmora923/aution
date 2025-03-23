@@ -25,12 +25,13 @@ export const Profile = () => {
     const [updateModal, setUpdateModal] = useState('hidden');
     const [verificationMessage, setVerificationMessage] = useState('');
     const [isEditing, setIsEditing] = useState(false);
+    const backendLink = "https://backend-auction.onrender.com";
 
     const requestEmailVerification = () => {
         const userId = window.localStorage.getItem('id');
         const email = window.localStorage.getItem('email'); // O como obtengas el email del usuario
 
-        axios.post('https://backend-auction.onrender.com/request-email-verification', { userId, email })
+        axios.post(`${backendLink}/request-email-verification`, { userId, email })
             .then(response => {
                 (response.ok)
                 setVerificationMessage('Se ha enviado un correo de verificación a tu dirección de email.');
@@ -43,7 +44,7 @@ export const Profile = () => {
 
     useEffect(() => {
         // Fetch user data from the server
-        axios.get('https://backend-auction.onrender.com/user/profile', {
+        axios.get(`${backendLink}/user/profile`, {
             params: { userId: window.localStorage.getItem('id') }
         })
             .then(response => {
@@ -60,7 +61,7 @@ export const Profile = () => {
     }, []);
 
     const handleUpdateProfile = () => {
-        axios.post('https://backend-auction.onrender.com/user/update', {
+        axios.post(`${backendLink}/user/update`, {
             userId: window.localStorage.getItem('id'),
             email,
             residence,
@@ -91,7 +92,7 @@ export const Profile = () => {
         formData.append('profile_photo', profilePhoto);
         formData.append('userId', window.localStorage.getItem('id'));
 
-        axios.post('https://backend-auction.onrender.com/upload-profile-photo', formData, {
+        axios.post(`${backendLink}/upload-profile-photo`, formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }
@@ -101,7 +102,7 @@ export const Profile = () => {
                 alert('Profile photo updated successfully');
                 setUpdateModal('hidden');
                 // Fetch updated user data
-                axios.get('https://backend-auction.onrender.com/user/profile', {
+                axios.get(`${backendLink}/user/profile`, {
                     params: { userId: window.localStorage.getItem('id') }
                 })
                     .then(response => {

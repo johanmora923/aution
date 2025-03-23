@@ -36,69 +36,96 @@ export const Register = () => {
     }
 
     return(
-        <div className='bg-[#ededed] w-full h-screen flex flex-col items-center justify-center min-w-[375px]'>
-            <div className='bg-[#fdfdfd] w-full md:w-110 h-auto m-auto  rounded-[10px] min-w-[375px] '>
-                <div className='flex flex-col m-auto mt-10  text-[#110f0f] w-90 h-250] mb-10'>
-                    <img className='w-[150px] h-[100px] m-auto mt-10' src="/icono.png" alt="logo" />
-                    <h2 className='m-auto mt-2 text-xl'>create an account</h2>
-                    <div className='m-auto flex flex-row  '>
-                        <button
-                            onClick={handleGoogleSubmit}
-                            className="flex items-center justify-center bg-[#dddd] text-[#110f0f] p-2 rounded mt-4 mr-2 text-[15px]">
-                            <FaGoogle className="mr-2 justify-between" color='#4285f4' /> Sign in with Google
-                        </button>
-                        <button
-                            onClick={handleAppleSubmit}
-                            className="flex items-center justify-center bg-[#dddd] text-[#110f0f] p-2 rounded mt-4 text-[15px]">
-                            <FaApple className="mr-2" /> Sign in with Apple
-                        </button>
-                    </div>
-                    <div className='flex flex-row items-center  mt-3 '>
-                        <div className='bg-[#1111] w-35 h-0.5 rounded-[50px]'></div>
-                        <span className='text-xs ml-1 mr-1 text-gray-600' >Or use Email</span>
-                        <div  className='bg-[#1111] w-35 h-0.5 rounded-[50px]'></div>
-                    </div>
-                    <form onSubmit={handleSubmit}  >
-                        <div className=' border border-gray-300  mt-8 rounded-[10px]'>
-                            <input
-                                type="text"
-                                id="user"
-                                value={user}
-                                onChange={(e) => setUser(e.target.value)}
-                                required
-                                placeholder='user'
-                                className='h-12 w-[100%] outline-none border-b border-b-gray-300  '
-                            />
-                            <input
-                                type="password"
-                                id="password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                required
-                                placeholder='password'
-                                className='h-12 outline-none w-[100%]  border-b border-b-gray-300 '
-                            />
-                            <input
-                                type="email"
-                                id="email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                required
-                                placeholder='email'
-                                className='h-12 outline-none w-[100%]   '
-                            />
-                        </div>
-                        <button 
-                        className='bg-[#110f0f] text-[#fdfdfd] w-[100%] h-8 rounded-[10px] mt-7' 
-                        type="submit">
-                            submit
-                        </button>
-                    </form>
-                    <p className='m-auto mt-5 mb-5 text-gray-600'>
-                        do you have a account? <Link className='text-[#110f0f]' to="/">sign in here</Link>
-                    </p>
-                </div>
+        <div className="bg-gray-100 w-full min-h-screen  flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
+            <div className="mt-5 mb-5 bg-white w-full max-w-md md:max-w-lg lg:max-w-xl rounded-xl shadow-lg p-6 sm:p-8">
+            <div className="flex flex-col items-center">
+                <img
+                className="w-24 sm:w-28 md:w-36 h-auto mb-6"
+                src="/icono.png"
+                alt="Logo de la aplicación"
+                />
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-800 mb-6 text-center">
+                Create an account
+                </h2>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 mb-6">
+                <button
+                onClick={handleGoogleSubmit}
+                className="flex items-center justify-center bg-gray-100 text-gray-700 border border-gray-300 rounded-lg py-2 px-4 w-full sm:w-1/2 text-sm font-medium hover:bg-gray-200 transition"
+                aria-label="Sign in with Google">
+                <FaGoogle className="mr-2" color="#4285f4" />
+                Google
+                </button>
+                <button
+                onClick={handleAppleSubmit}
+                className="flex items-center justify-center bg-gray-100 text-gray-700 border border-gray-300 rounded-lg py-2 px-4 w-full sm:w-1/2 text-sm font-medium hover:bg-gray-200 transition"
+                aria-label="Sign in with Apple">
+                <FaApple className="mr-2" />
+                Apple
+                </button>
+            </div>
+            <div className="flex items-center w-full mb-6" role="separator">
+                <div className="h-px flex-grow bg-gray-300"></div>
+                <span className="mx-4 text-gray-500 text-sm">Or use Email</span>
+                <div className="h-px flex-grow bg-gray-300"></div>
+            </div>
+            <form onSubmit={handleSubmit} className="space-y-4">
+                <label htmlFor="user" className="block text-sm font-medium text-gray-700">
+                Username
+                </label>
+                <input
+                type="text"
+                id="user"
+                value={user}
+                onChange={(e) => setUser(e.target.value)}
+                required
+                placeholder="Enter your username"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-indigo-200"
+                aria-required="true"
+                />
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                Email
+                </label>
+                <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                placeholder="Enter your email"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-indigo-200"
+                aria-required="true"
+                />
+                <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+                Password
+                </label>
+                <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                placeholder="Enter your password"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-indigo-200"
+                aria-required="true"
+                />
+                <button
+                type="submit"
+                className="w-full bg-indigo-600 text-white py-2 rounded-lg font-medium hover:bg-indigo-700 transition">
+                Submit
+                </button>
+            </form>
+            <p className="text-sm text-gray-600 mt-6 text-center">
+                Already have an account?{' '}
+                <Link
+                className="text-indigo-600 font-medium hover:underline"
+                to="/"
+                aria-label="Navigate to the sign-in page">
+                Sign in here
+                </Link>
+            </p>
+            </div>
         </div>
-    </div>
+
     )
 }

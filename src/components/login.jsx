@@ -44,75 +44,83 @@ export const Login = () => {
 
 
     return (
-        <div className="w-full flex flex-col items-center justify-center px-4 md:px-8 lg:px-16 h-screen">
-            <div className="w-full max-w-md md:max-w-lg lg:max-w-xl bg-transparent">
-                <div className="flex flex-col bg-[#fdfdfd] rounded-[20px] text-[#110f0f] shadow-lg p-6 sm:p-8">
-                    <img
-                    className="w-[80px] md:w-[120px] lg:w-[150px] mx-auto mb-4"                        
-                    src="/icono.png"
-                    alt="logo"
-                    />
-                    <h2 className="text-center text-xl font-medium mb-4">Sign into your account</h2>            
-                    <div className="flex justify-between gap-3">
-                        <button
-                            onClick={handleGoogleLogin}
-                            className="flex items-center justify-center bg-gray-200 text-black p-2 rounded w-full text-sm md:text-base">
-                            <FaGoogle className="mr-2" color="#4285f4" />
-                                Sign in with Gmail
-                        </button>
-                        <button
-                            onClick={handleAppleLogin}
-                            className="flex items-center justify-center bg-gray-200 text-black p-2 rounded w-full text-sm md:text-base">
-                            <FaApple className="mr-2" />
-                                Sign in with Apple
-                        </button>
-                    </div>
-                    <div className="flex items-center my-4">
-                        <div className="flex-grow h-[1px] bg-gray-300"></div>
-                        <span className="mx-4 text-gray-600 text-xs">Or use Email</span>
-                        <div className="flex-grow h-[1px] bg-gray-300"></div>
-                    </div>
-                    <form onSubmit={handleSubmit} className="space-y-4">
-                        <input
-                        type="text"
-                        value={user}
-                        onChange={(e) => setUser(e.target.value)}
-                        required
-                        placeholder="Username"
-                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-gray-400"
-                        />
-                        <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                        placeholder="Password"
-                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-gray-400"
-                        />
-                        <div className="flex justify-between text-sm">
-                            <label className="flex items-center">
-                                <input type="checkbox" className="mr-1" />
-                                Remember me
-                            </label>
-                            <a href="/" className="text-gray-500">
-                                Forgot password?
-                            </a>
-                            </div>
-                            <button
-                                type="submit"
-                                className="w-full py-2 bg-black text-white rounded-md hover:bg-gray-800 transition">
-                                Sign in
-                            </button>
-                            </form>
-                            <p className="text-center text-sm text-gray-600 mt-4">
-                                Not a member?{' '}
-                                <Link to="/register" className="text-black font-medium">
-                                    Register here
-                                </Link>
-                            </p>
-                        </div>
-                    </div>
+        <div className="w-full flex flex-col items-center justify-center px-6 md:px-12 lg:px-20 h-screen bg-gray-100">
+        <div className="w-full max-w-lg bg-white rounded-2xl shadow-md overflow-hidden">
+            <div className="flex flex-col items-center p-8">
+            <img
+                className="w-24 md:w-32 lg:w-40 mb-6"
+                src="/icono.png"
+                alt="logo"
+            />
+            <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-6">
+                Sign in to your account
+            </h2>
+            <div className="flex gap-4 mb-6 w-full">
+                <button
+                onClick={handleGoogleLogin}
+                className="flex items-center justify-center bg-gray-100 text-gray-700 border border-gray-300 rounded-lg py-2 px-4 w-1/2 text-sm font-medium hover:bg-gray-200 transition">
+                <FaGoogle className="mr-2" color="#EA4335" />
+                Google
+                </button>
+                <button
+                onClick={handleAppleLogin}
+                className="flex items-center justify-center bg-gray-100 text-gray-700 border border-gray-300 rounded-lg py-2 px-4 w-1/2 text-sm font-medium hover:bg-gray-200 transition">
+                <FaApple className="mr-2" />
+                Apple
+                </button>
+            </div>
+            <div className="flex items-center w-full mb-6">
+                <div className="h-px flex-grow bg-gray-300"></div>
+                <span className="mx-4 text-gray-500 text-sm">Or use Email</span>
+                <div className="h-px flex-grow bg-gray-300"></div>
+            </div>
+            <form onSubmit={handleSubmit} className="w-full">
+                <div className="mb-4">
+                <input
+                    type="text"
+                    value={user}
+                    onChange={(e) => setUser(e.target.value)}
+                    required
+                    placeholder="Username"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-indigo-200"
+                />
                 </div>
+                <div className="mb-4">
+                <input
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                    placeholder="Password"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-indigo-200"
+                />
+                </div>
+                <div className="flex justify-between items-center text-sm mb-6">
+                <label className="flex items-center text-gray-600">
+                    <input type="checkbox" className="mr-2" />
+                    Remember me
+                </label>
+                <a href="/" className="text-indigo-600 hover:underline">
+                    Forgot password?
+                </a>
+                </div>
+                <button
+                type="submit"
+                className="w-full bg-indigo-600 text-white py-2 rounded-lg font-medium hover:bg-indigo-700 transition">
+                Sign in
+                </button>
+            </form>
+            </div>
+            <div className="bg-gray-50 text-center py-4">
+            <p className="text-sm text-gray-600">
+                Not a member?{' '}
+                <Link to="/register" className="text-indigo-600 font-medium hover:underline">
+                Register here
+                </Link>
+            </p>
+            </div>
+        </div>
+    </div>
     )
 };
 
